@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA
+    Peça para o programa perguntar ao professor regente o nome dos três candidatos a representante da sala.
+    Peça também para o programa perguntar ao professor regente a quantidade de alunos votantes.
+    Desenvolva um programa que armazene o voto de cada aluno da sala e apresente o resultado da votação,
+    com o quantitativo de votos e também a porcentagem de votos de cada candidato a representante de sala.
+    */
+
+    //ENTRADA
+    let candidato = []
+    let a = 0
+    let b = 0
+    let c = 0
+
+    //PROCESSAMENTO
+    for (let i = 0; i < 3; i++) {
+        const nomes = prompt(`Informe o nome dos 3 candidatos a representante.`);
+        candidato.push(nomes)
+    }
+    const votantes = Number(prompt(`Informe o número de votantes.`));
+
+    for (let i = 0; i < votantes; i++) {
+        const voto = prompt(`Informe seu voto, sendo: a- ${candidato[0]} b- ${candidato[1]} c- ${candidato[2]}.`);
+
+        if (voto == `a`) {
+            a++
+        }
+        else if (voto == `b`) {
+            b++
+        } else if (voto == `c`) {
+            c++
+        } else {
+            alert(`Houve algum erro.`);
+        }
+    }
+
+    //SAÍDA
+    if (a > b && c) {
+        alert(`O novo representante é: ${candidato[0]} com ${a} votos, sendo ${(a / votantes) * 100}% dos votos. O candidato ${candidato[1]} com ${b} votos o equivalente a ${(b / votantes) * 100}%. O candidato ${candidato[2]} com ${c} votos, sendo ${(c / votantes) * 100}%.`);
+    }
+    else if (b > a && c) {
+        alert(`O novo representante é: ${candidato[1]} com ${b}votos, sendo ${(b / votantes) * 100}%. O candidato ${candidato[0]} com ${a} votos, sendo ${(a / votantes) * 100}%. O candidato ${candidato[2]} com ${c} votos, sendo ${(c / votantes) * 100}%.`);
+    }
+    else {
+        alert(`O novo representante é: ${candidato[2]} com ${c} votos, sendo ${(c / votantes) * 100}%. O candidato ${candidato[0]} com ${a} votos, sendo ${(a / votantes) * 100}%. O candidato ${candidato[1]} com ${b} votos, sendo ${(b / votantes) * 100}%.`);
+    }
+
+</script>
